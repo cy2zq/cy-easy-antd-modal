@@ -52,4 +52,4 @@ jobs:
         run: pnpm run release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.cy_npm_token }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
