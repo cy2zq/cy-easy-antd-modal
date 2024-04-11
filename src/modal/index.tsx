@@ -65,6 +65,8 @@ if (!initialized) {
     }
   }
   initialized = true;
+}else{
+  console.log(222222)
 }
 
 // fixme: 类型体操太累了
