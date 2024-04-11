@@ -26,5 +26,4 @@ export * as AntdMobile from './mobile';
 export const Antd = {
   Modal,
   Drawer,
-  cy:'test'
 };

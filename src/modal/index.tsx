@@ -46,6 +46,7 @@ const Modal = (props: ModalProps) => {
         onCancel={handleModalCancel}
       >
         {content}
+        cy
       </AntdModal>
     </>
   );
