@@ -1,6 +1,6 @@
 
 ## [2.0.1](https://github.com/Wxh16144/cy-easy-antd-modal/compare/v1.6.0...v1.6.1) (2024-03-07)
-### Bug Fixes
+### Bug2 Fixes
 
 ### Bug Fixes
 ## [1.6.1](https://github.com/Wxh16144/cy-easy-antd-modal/compare/v1.6.0...v1.6.1) (2024-03-07)
