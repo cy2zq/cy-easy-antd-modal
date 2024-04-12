@@ -76,8 +76,7 @@ export default () => (
 
 ## License
 
-Copyright © 2023 - present [Wxh16144][profile-url]. <br />
-This project is [MIT](LICENSE) licensed.
+Copyright © 2024 - present [chaoyang][profile-url]. <br />
 
 <!-- LINK GROUP -->
 
