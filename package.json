@@ -19,7 +19,7 @@
   },
   "license": "MIT",
   "author": "cy",
-  "sideEffects": false,
+
   "exports": {
     ".": {
       "types": "./es/index.d.ts",
