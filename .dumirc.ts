@@ -12,6 +12,16 @@ export default defineConfig({
     name,
     github: homepage,
   },
+  headScripts: [
+    'https://code.jquery.com/jquery-3.7.1.js',
+    `if (window.$) {
+      console.log('jQuery is already bound to window object.');
+    } else {
+      // 如果没有绑定，则绑定 jQuery
+      window.$ = window.jQuery;
+      console.log('jQuery has been bound to window object.');
+    }`,
+  ],
   base: isProdSite ? `/${name}/` : '/',
   publicPath: isProdSite ? `/${name}/` : '/',
   html2sketch: {},

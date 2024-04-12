@@ -25,6 +25,7 @@ const Drawer = (props: DrawerProps) => {
     useModalEnhanced<CloseCallback>(props);
 
   const handleModalCancel: DrawerProps['onClose'] = (event) => {
+    console.log('cy')
     close('onClose', event);
   };
 
