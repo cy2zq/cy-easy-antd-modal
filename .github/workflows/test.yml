@@ -1,5 +1,5 @@
 name: Test CI
-on: []
+on: [push, pull_request]
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -35,10 +35,10 @@ jobs:
         run: pnpm install
 
       - name: lint
-        # run: pnpm run ci
+        run: pnpm run ci
 
       - name: Test and coverage
-        # run: pnpm run test:coverage
+        run: pnpm run test:coverage
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3
