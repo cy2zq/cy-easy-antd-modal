@@ -1,6 +1,6 @@
 {
   "name": "cy-easy-antd-modal",
-  "version": "3.2.0-beta.2",
+  "version": "2.2.0-beta.4",
   "description": "二次开发, 简化 Ant Design Modal 的使用方式",
   "keywords": [
     "antd",
@@ -19,7 +19,6 @@
   },
   "license": "MIT",
   "author": "cy",
-
   "exports": {
     ".": {
       "types": "./es/index.d.ts",
