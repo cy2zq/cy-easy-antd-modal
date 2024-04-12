@@ -1,3 +1,12 @@
+# [2.2.0-beta.2](https://github.com/cy2zq/cy-easy-antd-modal/compare/v2.2.0-beta.1...v2.2.0-beta.2) (2024-04-12)
+
+
+### Features
+
+* **API:** Add a api ([d080f05](https://github.com/cy2zq/cy-easy-antd-modal/commit/d080f05800f5741ac560d31673f73f963a9ebceb))
+* **API:** Add a new method to the public API ([b4fa82e](https://github.com/cy2zq/cy-easy-antd-modal/commit/b4fa82e69615e4548312c1d1caf3a609f35367a7))
+* **API:** Add a new method to the public API ([444b92e](https://github.com/cy2zq/cy-easy-antd-modal/commit/444b92e0177d8682106a432b6907c6654415201e))
+
 # [2.2.0-beta.1](https://github.com/cy2zq/cy-easy-antd-modal/compare/v2.1.1...v2.2.0-beta.1) (2024-04-12)
 
 ### Features
