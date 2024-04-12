@@ -36,7 +36,7 @@
 [download-image]: https://img.shields.io/npm/dm/cy-easy-antd-modal.svg?style=flat-square
 [download-url]: https://npmjs.org/package/cy-easy-antd-modal
 
-## 简介122收到连接法兰世纪东方
+## 简介
 
 基于 Ant Design 的 Modal 组件的二次封装，简化了 Modal 的使用方式
 
