@@ -1,14 +1,14 @@
 ---
-title: 为什么二开?
+title: title?
 nav: 快速了解
 group:
   title: 介绍
 order: 0
 ---
 
-## 为什么二开
+## 背景
 
-Ant Design 的 Modal 组件提供了非常多的 API 以便于我们可以灵活方便的使用, 那为什么我又二次封装了一个 Modal 组件呢? 这不是重复造轮子吗?
+一些基于antd的组件封装使用
 
 ## 前言
 
