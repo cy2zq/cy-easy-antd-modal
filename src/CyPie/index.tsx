@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
-import './index.less';
-import styles from './index.less';
+
+import styles from './index.module.less';
 
 function PieChart(props) {
   const chartRef = useRef(null);
@@ -368,8 +368,8 @@ function PieChart(props) {
   console.log(props, 368);
 
   return (
-    <div className={'container'} {...props}>
-      <div ref={chartRef} className={'main'}></div>
+    <div className={styles.container} {...props}>
+      <div ref={chartRef} className={styles.main}></div>
     </div>
   );
 }
