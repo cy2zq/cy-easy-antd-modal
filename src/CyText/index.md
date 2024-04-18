@@ -1,11 +1,11 @@
-# 文字样式
+# 文字
 
 hearts
 
 ```jsx
 import { CyText } from 'cy-easy-antd-modal';
 
-export default () => <CyText title={'cy_TestCY'} type={'hearts'} style={{fontSize:'33px'}}/>
+export default () => <CyText title={'cy_TestCY'} type={'hearts'} style={{fontSize:'34px'}}/>
 ```
 ```jsx
 import { CyText ,TypewriterCY} from 'cy-easy-antd-modal';

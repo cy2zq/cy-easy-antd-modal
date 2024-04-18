@@ -21,6 +21,8 @@ export default defineConfig({
       window.$ = window.jQuery;
       console.log('jQuery has been bound to window object.');
     }`,
+    `https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js`,
+    `https://cdn.jsdelivr.net/npm/echarts-gl/dist/echarts-gl.min.js`,
   ],
   base: isProdSite ? `/${name}/` : '/',
   publicPath: isProdSite ? `/${name}/` : '/',
