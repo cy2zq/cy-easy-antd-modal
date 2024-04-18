@@ -77,8 +77,7 @@ export default () => <CyPie
   },
 ]}/>
 ```
-
-# 饼图2d
+# 饼图2d测试
 基于Echart
 ```jsx
 import { CyPie2d } from 'cy-easy-antd-modal';
