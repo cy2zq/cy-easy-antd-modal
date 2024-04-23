@@ -1,10 +1,20 @@
 import { useEffect, useRef } from 'react';
 
 import styles from './index.module.less';
-
+// 防抖函数
+function debounce(fn, delay) {
+  let handle = null;
+  return function (...e) {
+    // 取消之前的延时调用
+    clearTimeout(handle);
+    handle = setTimeout(() => {
+      fn.call(this, ...e);
+    }, delay);
+  };
+}
 function PieChart(props) {
   const chartRef = useRef(null);
-  console.log(styles, 6);
+  const divRef = useRef(null);
   useEffect(() => {
     let chartInstance = echarts.init(chartRef.current);
     function getParametricEquation(startRatio, endRatio, isSelected, isHovered, k, height) {
@@ -253,7 +263,7 @@ function PieChart(props) {
         itemGap: 30,
         itemHeight: 18,
         itemWidth: 17,
-        right: 40,
+        right: 10,
         top: 60,
         textStyle: {
           color: '#fff',
@@ -348,10 +358,6 @@ function PieChart(props) {
         show: false,
         boxHeight: 0.01,
         left: '-18%',
-        // right:'10%',
-        // top: '10%',
-        // bottom: "20%",
-        // environment: "./img/bg19.png",
         viewControl: {
           distance: 180,
           minDistance: 180,
@@ -363,12 +369,28 @@ function PieChart(props) {
       },
       series: series,
     };
-    chartInstance.setOption(option);
+    if (props.optionsData) {
+      chartInstance.setOption(option);
+    }
   }, [props.optionsData]);
-  console.log(props, 368);
-
+  useEffect(() => {
+    const div = divRef.current;
+    // 创建一个ResizeObserver实例并定义回调函数
+    const resizeObserver = new ResizeObserver((entries) => {
+      for (const entry of entries) {
+        const { width, height } = entry.contentRect;
+        chartRef.current.style.transform = `scaleX(${width / 800}) scaleY(${height / 500})`;
+      }
+    });
+    // 开始监听div的尺寸变化
+    resizeObserver.observe(div);
+    return () => {
+      //组件销毁停止监听
+      resizeObserver.disconnect();
+    };
+  }, []);
   return (
-    <div className={styles.container} {...props}>
+    <div className={styles.container} {...props} ref={divRef}>
       <div ref={chartRef} className={styles.main}></div>
     </div>
   );

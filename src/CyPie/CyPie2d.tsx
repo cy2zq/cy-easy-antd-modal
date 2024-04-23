@@ -1,43 +1,60 @@
-import { useEffect, useRef } from 'react';
+import ReactEcharts from 'echarts-for-react';
+import { Component } from 'react';
 
-// import styles from './index.module.less';
+class Index extends Component {
+  constructor() {
+    super();
+    // this.divRef = React.createRef();
+    this.resizeObserver = null;
+  }
 
-function PieChart2d(props) {
-  console.log(props, 6666);
-  const chartRef = useRef(null);
-  let datas = {
-    data: [
-      {
-        name: '类型1',
-        value: 1314,
-      },
-      {
-        name: '类型2',
-        value: 527,
-      },
-      {
-        name: '类型3',
-        value: 521,
-      },
-      {
-        name: '类型4',
-        value: 27,
-      },
-      {
-        name: '类型5',
-        value: 10,
-      },
-      {
-        name: '类型6',
-        value: 2,
-      },
-    ],
-    name: '项目',
-    height: 300,
-    yLabel: 'value',
-  };
-  useEffect(() => {
-    let myChart = echarts.init(chartRef.current);
+  componentDidMount() {
+    const div = this.divRef;
+    let main = this.mainRef;
+    // 创建一个ResizeObserver实例并定义回调函数
+    const resizeObserver = new ResizeObserver((entries) => {
+      for (const entry of entries) {
+        const { width, height } = entry.contentRect;
+        main.style.transform = `scale(1)`;
+        // main.style.transform = `scaleX(${width / 800}) scaleY(${height / 500})`;
+      }
+    });
+    // 开始监听div的尺寸变化
+    resizeObserver.observe(div);
+    this.resizeObserver = resizeObserver;
+    const myChart = this.echartRef.getEchartsInstance();
+    // 默认高亮
+    let index = 0; // 高亮索引
+    myChart.dispatchAction({
+      type: 'highlight',
+      seriesIndex: index,
+      dataIndex: index,
+    });
+    myChart.on('mouseover', function (e) {
+      if (e.dataIndex != index) {
+        myChart.dispatchAction({
+          type: 'downplay',
+          seriesIndex: 0,
+          dataIndex: index,
+        });
+      }
+    });
+    myChart.on('mouseout', function (e) {
+      index = e.dataIndex;
+      myChart.dispatchAction({
+        type: 'highlight',
+        seriesIndex: 0,
+        dataIndex: e.dataIndex,
+      });
+    });
+  }
+
+  componentWillUnmount() {
+    //卸载移除监听
+    this.resizeObserver.disconnect();
+  }
+
+  getOption() {
     let colorList = ['#00F9FF', '#1978E5', '#FFF67C', '#60B45E', '#BECDD0'];
     let colorListShadow = [
       'rgba(25,63,87,1)',
@@ -46,7 +63,7 @@ function PieChart2d(props) {
       'rgba(94, 225, 204,.3)',
       'rgba(212,224,227,.1)',
     ];
-    let data = props.optionsData || datas.data;
+    let data = this.props.optionsData;
     // color: ['#00F9FF', '#1978E5', '#FFF67C', '#60B45E', '#BECDD0'],
     let outData = data.map((item, index) => {
       return {
@@ -59,8 +76,8 @@ function PieChart2d(props) {
         },
       };
     });
-    let center = ['30%', '50%'];
-    let radius = {
+    var center = ['30%', '50%'];
+    var radius = {
       内: ['55%', '60%'],
       pie: ['60%', '75%'],
       外: ['75%', '80%'],
@@ -71,18 +88,11 @@ function PieChart2d(props) {
         trigger: 'item',
         formatter: '{a} <br/>{b}: {c} ({d}%)',
       },
-      // grid: {
-      //   left: '10',
-      //   right: '10%',
-      //   bottom: '3%',
-      //   top: '10%',
-      //   containLabel: true,
-      // },
       legend: {
+        itemGap: 30,
         selectedMode: false,
         orient: 'vertical',
-        // left: 'right',
-        right: '10%',
+        right: 100,
         top: 'center',
         align: 'left',
         itemHeight: 16,
@@ -92,12 +102,12 @@ function PieChart2d(props) {
           rich: {
             name: {
               color: '#fff',
-              fontSize: 18,
+              fontSize: 20,
               lineHeight: 24,
             },
             value: {
               color: '#fff',
-              fontSize: 18,
+              fontSize: 20,
               lineHeight: 24,
             },
           },
@@ -130,7 +140,7 @@ function PieChart2d(props) {
               textStyle: {
                 fontSize: '30',
                 fontWeight: 'bold',
-                color: 'white',
+                color: colorList,
               },
             },
           },
@@ -177,42 +187,43 @@ function PieChart2d(props) {
         },
       ],
     };
+    return option;
+  }
 
-    // 默认高亮
-    let index = 0; // 高亮索引
+  onChartClick() {}
 
-    myChart.on('finished', function () {
-      myChart.dispatchAction({
-        type: 'highlight',
-        seriesIndex: index,
-        dataIndex: index,
-      });
-      myChart.on('mouseover', function (e) {
-        if (e.dataIndex != index) {
-          myChart.dispatchAction({
-            type: 'downplay',
-            seriesIndex: 0,
-            dataIndex: index,
-          });
-        }
-      });
-      myChart.on('mouseout', function (e) {
-        index = e.dataIndex;
-        myChart.dispatchAction({
-          type: 'highlight',
-          seriesIndex: 0,
-          dataIndex: e.dataIndex,
-        });
-      });
-    });
-    myChart.setOption(option);
-  }, [props.optionsData]);
+  onChartLegendselectchanged() {}
 
-  return (
-    <div {...props}>
-      <div ref={chartRef} style={{ height: props.height || 400 }}></div>
-    </div>
-  );
+  render() {
+    const onEvents = {
+      click: this.onChartClick,
+      legendselectchanged: this.onChartLegendselectchanged,
+    };
+    return (
+      <div
+        ref={(e) => {
+          this.divRef = e;
+        }}
+      >
+        <div
+          ref={(e) => {
+            this.mainRef = e;
+          }}
+          {...this.props}
+        >
+          <ReactEcharts
+            onEvents={onEvents}
+            ref={(e) => {
+              this.echartRef = e;
+            }}
+            option={this.getOption()}
+            theme="Imooc"
+            {...this.props}
+          />
+        </div>
+      </div>
+    );
+  }
 }
 
-export default PieChart2d;
+export default Index;

@@ -7,9 +7,11 @@
     "Ant Design",
     "Modal",
     "React",
-    "drag"
+    "drag",
+    "echarts",
+    "echarts-gl"
   ],
-  "homepage": "https://github.com/cy2zq/cy-easy-antd-modal",
+  "homepage": "https://cy2zq.github.io/cy-easy-antd-modal",
   "bugs": {
     "url": "https://github.com/cy2zq/cy-easy-antd-modal/issues/new"
   },
@@ -139,5 +141,10 @@
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org"
+  },
+  "dependencies": {
+    "echarts": "^5.5.0",
+    "echarts-for-react": "^3.0.2",
+    "react-scale-view": "^1.1.2"
   }
 }

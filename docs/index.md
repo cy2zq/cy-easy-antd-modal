@@ -1,7 +1,7 @@
 ---
 hero:
-  title: Easy antd <b><a href="https://ant.design/components/modal">Modal</a><b>
-  description: 简化 Ant Design Modal 的使用方式
+  title: chaoYang <b><a target='_blank' href="https://ant.design/components/modal">测试用</a><b>
+  description: 传说中的神兽！！！！！
   actions:
     - text: 快速上手
       link: /guide

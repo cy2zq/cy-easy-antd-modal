@@ -1,17 +1,24 @@
 # 饼图3d
-基于Echart和echart-gl
+基于Echart和echart-gl-
+```javascript
+  headScripts: [
+  `https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js`,
+  `https://cdn.jsdelivr.net/npm/echarts-gl/dist/echarts-gl.min.js`,
+]
+```
 ```jsx
 import { CyPie } from 'cy-easy-antd-modal';
 
 export default () => <CyPie
   style={{
-    background:'#0a264d'
+    background:'#0a264d',
+ 
   }}
   titleStyle={{
     left: 180,
     top: 220,
     style: {
-      text: '晁阳最帅7521',
+      text: '传说中的神兽7',
       textAlign: 'center',
       fill: 'white',
       fontSize: 22,
@@ -77,14 +84,15 @@ export default () => <CyPie
   },
 ]}/>
 ```
-# 饼图2d测试
+# 饼图2d
 基于Echart
 ```jsx
 import { CyPie2d } from 'cy-easy-antd-modal';
 
 export default () => <CyPie2d
   style={{
-    background:'#0a264d'
+    background:'#0a264d',
+    height:500
   }}
   optionsData={[
   {
