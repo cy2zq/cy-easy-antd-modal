@@ -15,7 +15,8 @@ class Index extends Component {
     const resizeObserver = new ResizeObserver((entries) => {
       for (const entry of entries) {
         const { width, height } = entry.contentRect;
-        main.style.transform = `scale(1)`;
+        main.style.transform = `scale(1.1)`;
+        console.log(main, 19);
         // main.style.transform = `scaleX(${width / 800}) scaleY(${height / 500})`;
       }
     });

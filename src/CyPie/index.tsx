@@ -302,22 +302,6 @@ function PieChart(props) {
           fontSize: 22,
         },
       },
-      // backgroundColor: "#0E3567",
-      // graphic: {
-      //     type: 'image',
-      //     id: 'myImage',
-      //     left: '30',
-      //     top: '140',
-      //     z: -100,
-      //     bounding: 'raw',
-      //     origin: [0, 0], // 图片的中心位置
-      //     style: {
-      //         image: './img/bg20.png', // 图片的URL
-      //         width: 400,
-      //         height: 205,
-      //         opacity: 1
-      //     }
-      // },
       graphic: {
         type: 'text',
         ...props.titleStyle,
@@ -379,7 +363,9 @@ function PieChart(props) {
     const resizeObserver = new ResizeObserver((entries) => {
       for (const entry of entries) {
         const { width, height } = entry.contentRect;
-        chartRef.current.style.transform = `scaleX(${width / 800}) scaleY(${height / 500})`;
+        if (chartRef.current) {
+          chartRef.current.style.transform = `scaleX(${width / 800}) scaleY(${height / 500})`;
+        }
       }
     });
     // 开始监听div的尺寸变化
