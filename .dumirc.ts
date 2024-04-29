@@ -23,14 +23,14 @@ export default defineConfig({
     }`,
     `https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js`,
     `https://cdn.jsdelivr.net/npm/echarts-gl/dist/echarts-gl.min.js`,
-    //   `
-    //   (function() {
-    //     const link = document.createElement('link');
-    //     link.rel = 'stylesheet';
-    //     link.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css';
-    //     document.head.appendChild(link);
-    //   })();
-    // `,
+    `
+      (function() {
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css';
+        document.head.appendChild(link);
+      })();
+    `,
   ],
   base: isProdSite ? `/${name}/` : '/',
   publicPath: isProdSite ? `/${name}/` : '/',
