@@ -7,6 +7,7 @@ export { default as DiyChart } from './CyBar/DiyChart';
 export { default as CyBtn } from './CyBtn';
 export { default as CyTag } from './CyBtn/Btn';
 export { default as CyWoodBtn } from './CyBtn/WoodBtn';
+export { default as CyIcon } from './CyIcon';
 export { default as CyPie } from './CyPie';
 export { default as CyPie2d } from './CyPie/CyPie2d';
 export { default as CyText } from './CyText';

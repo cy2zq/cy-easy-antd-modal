@@ -442,7 +442,7 @@ export default () => <DiyChart
 />
 ```
 
-# bar
+# EChart-Bar
 柱状图
 ```jsx
 import { CyBar } from 'cy-easy-antd-modal';
@@ -477,7 +477,7 @@ export default () => <CyBar data={[
    style={{background:'#0a264d',height:300}}                         
 />
 ```
-# bar
+# 自定义-EChart
 DIY-自定义option
 ```jsx
 import { DiyChart } from 'cy-easy-antd-modal';

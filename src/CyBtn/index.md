@@ -89,7 +89,7 @@ export default () => <div style={{
 ```
 
 
-# button
+# 按钮
 纯css按钮
 ```jsx
 import { CyBtn } from 'cy-easy-antd-modal';

@@ -5,7 +5,7 @@ const isProd = process.env.NODE_ENV === 'production';
 // 不是预览模式 同时是生产环境
 const isProdSite = process.env.PREVIEW !== '1' && isProd;
 
-const name = 'cy-easy-antd-modal';
+const name = 'cy-7521';
 
 export default defineConfig({
   themeConfig: {
@@ -23,6 +23,14 @@ export default defineConfig({
     }`,
     `https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js`,
     `https://cdn.jsdelivr.net/npm/echarts-gl/dist/echarts-gl.min.js`,
+    `
+    (function() {
+      const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css';
+      document.head.appendChild(link);
+    })();
+  `,
   ],
   base: isProdSite ? `/${name}/` : '/',
   publicPath: isProdSite ? `/${name}/` : '/',

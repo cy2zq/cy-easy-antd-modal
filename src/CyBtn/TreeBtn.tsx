@@ -1,7 +1,6 @@
 import './wood.less';
 
 function Index(props: any) {
-  console.log(props, 555555555);
   return (
     <div className={'cy01 cy02 cy03'}>
       <a className="button" href="#">

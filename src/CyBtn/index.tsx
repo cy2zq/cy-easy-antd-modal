@@ -8,7 +8,6 @@ function Index(props: any) {
         backgroundColor: props.color.btnColor,
       }
     : {};
-  console.log(type, 5, props);
   return (
     <div>
       <div className={styels[type]}>

@@ -38,14 +38,9 @@
 
 ## 简介
 
-基于 Ant Design 的 Modal 组件的二次封装，简化了 Modal 的使用方式
+个人使用
+![demo](https://github.com/cy2zq/cyProfile/blob/main/images/1.jpg?raw=true)
 
-- 支持 antd4.x 和 antd5.x, API 保持一致
-- 自动绑定打开事件, 无需维护 open 状态
-- content 增强, 支持内部手动关闭
-- 支持拖拽, 类 window 窗口
-- 可直接对接 antd-mobile 的 Mask, Modal, Popup, Dialog 组件
-- 长期维护 (欢迎 PR)
 
 ## 快速上手
 
