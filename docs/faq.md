@@ -5,7 +5,7 @@ nav:
   order: 3
 ---
 
-## Q: 普通标签控制台报 `enhancedAction` 错误, [#14](https://github.com/Wxh16144/cy-easy-antd-modal/issues/14)
+## Q: 普通标签控制台报 `enhancedAction` 错误, [#14](https://github.com/cy2zq/cy-easy-antd-modal/issues/14)
 
 ```txt
 React does not recognize the `enhancedAction` prop on a DOM element.
@@ -40,12 +40,12 @@ antd4.x 没有提供显隐回调，直到 5.3.0 antd 才为 Modal 提供了 `aft
 
 ---
 
-## Q: 为什么 PC 和 移动端的代码都放在一起，增加依赖体积。[#17](https://github.com/Wxh16144/cy-easy-antd-modal/issues/17)
+## Q: 为什么 PC 和 移动端的代码都放在一起，增加依赖体积。[#17](https://github.com/cy2zq/cy-easy-antd-modal/issues/17)
 
 ### A: 这也是规划错误，没有采用 monorepo 的方式，但是问题不是很大，一般构建工具都会对 js 代码 `tree shaking`
 
 ---
 
-## Q: 内部通过 `enhancedAction.close()` 关闭不执行 `onClean/onClose` 方法, [#18](https://github.com/Wxh16144/cy-easy-antd-modal/issues/18)
+## Q: 内部通过 `enhancedAction.close()` 关闭不执行 `onClean/onClose` 方法, [#18](https://github.com/cy2zq/cy-easy-antd-modal/issues/18)
 
 ### A: 设计缺陷，起初以为关闭即可，但是使用过程中还是难免会遇到这种需求。[1.6.0](guide/advanced-close.md) 已经通过另外一种方式解决。可以试试看～

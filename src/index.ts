@@ -12,6 +12,7 @@ export { default as CyPie } from './CyPie';
 export { default as CyPie2d } from './CyPie/CyPie2d';
 export { default as CyText } from './CyText';
 export { default as TypewriterCY } from './TypewriterCY';
+export { default as ModalBg } from './drag-modal/ModalBg';
 
 export * from './hooks';
 export * from './types';
