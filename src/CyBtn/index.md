@@ -51,7 +51,6 @@ export default () => <div style={{
      new Array(4)?.fill('cy')?.map((item,index)=> <Col span={6} key={index}>
        <CyWoodBtn 
          type={`cy0${index+1}`} 
-         // text={<div style={{width:60,textAlign:'center'}}>测试</div>}
          text={`cy0${index+1}`}
        />
      </Col>)
@@ -64,13 +63,14 @@ export default () => <div style={{
 
 # button
 纯css按钮CyTag
+![girl.png](./girl.png)
 ```jsx
 import { CyTag } from 'cy-easy-antd-modal';
 import {Row,Col} from 'antd'
 
 export default () => <div style={{
   padding:24,
-  background:'rgba(0,0,0,.1)', 
+  background:'url(./girl.png)', 
   // background:'radial-gradient(circle at 50% 0%,rgb(67, 54, 74) 16.4%,rgb(47, 48, 67) 68.2%,rgb(27, 23, 36) 99.1%)'
 }}>
  <Row gutter={[48,24]}>
@@ -79,7 +79,6 @@ export default () => <div style={{
      new Array(45)?.fill('cy')?.map((item,index)=> <Col span={6} key={index}>
        <CyTag 
          type={`cy0${index+1}`} 
-         // text={<div style={{width:60,textAlign:'center'}}>测试</div>}
          text={`cy0${index+1}`}
        />
      </Col>)

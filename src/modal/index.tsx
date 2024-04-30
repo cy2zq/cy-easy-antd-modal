@@ -19,7 +19,7 @@ export type ModalContentPropsWithEnhanced<P extends AnyObj = AnyObj> = PropsWith
   CloseCallback
 >;
 
-/** @see [cy-easy-antd-modal#Modal](https://github.com/Wxh16144/cy-easy-antd-modal/blob/master/src/modal/index.tsx) */
+/** @see [cy-easy-antd-modal#Modal](https://github.com/cy2zq/cy-easy-antd-modal/blob/master/src/modal/index.tsx) */
 const Modal = (props: ModalProps) => {
   const prefixCls = usePrefixCls('modal', props.prefixCls);
 
@@ -46,7 +46,6 @@ const Modal = (props: ModalProps) => {
         onCancel={handleModalCancel}
       >
         {content}
-
       </AntdModal>
     </>
   );
@@ -65,8 +64,8 @@ if (!initialized) {
     }
   }
   initialized = true;
-}else{
-  console.log(222222)
+} else {
+  console.log(222222);
 }
 
 // fixme: 类型体操太累了

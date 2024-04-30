@@ -10,7 +10,7 @@ export type DragModalProps = RequireKeys<ModalProps, 'title'>;
 
 const defaultCoordinates: Coordinates = { x: 0, y: 0 };
 
-/** @see [cy-easy-antd-modal#DragModal](https://github.com/Wxh16144/cy-easy-antd-modal/blob/master/src/drag-modal/index.tsx) */
+/** @see [cy-easy-antd-modal#DragModal](https://github.com/cy2zq/cy-easy-antd-modal/blob/master/src/drag-modal/index.tsx) */
 function DragModal(props: DragModalProps) {
   const [{ x, y }, setCoordinates] = React.useState<Coordinates>(defaultCoordinates);
 
