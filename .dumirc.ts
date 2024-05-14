@@ -32,6 +32,7 @@ export default defineConfig({
       })();
     `,
   ],
+
   base: isProdSite ? `/${name}/` : '/',
   publicPath: isProdSite ? `/${name}/` : '/',
   html2sketch: {},
