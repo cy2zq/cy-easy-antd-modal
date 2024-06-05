@@ -12,6 +12,7 @@ export default defineConfig({
     name,
     github: homepage,
   },
+  styles: [`https://unpkg.com/swiper@11.1.1/swiper-bundle.min.css`],
   headScripts: [
     'https://code.jquery.com/jquery-3.7.1.js',
     `if (window.$) {
@@ -22,6 +23,7 @@ export default defineConfig({
       console.log('jQuery has been bound to window object.');
     }`,
     `https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js`,
+    `https://unpkg.com/swiper@11/swiper-bundle.min.js`,
     `https://cdn.jsdelivr.net/npm/echarts-gl/dist/echarts-gl.min.js`,
     `
       (function() {
